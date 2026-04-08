@@ -12,7 +12,7 @@ import {
   FaqSection,
 } from "./";
 
-function MainSections({ onAddToCart, isDark = true }) {
+function MainSections({ onAddToCart, isDark = true, addingId }) {
   return (
     <main>
       <TrustBadgesSection isDark={isDark} />
@@ -20,7 +20,7 @@ function MainSections({ onAddToCart, isDark = true }) {
       <HowItWorksSection isDark={isDark} />
       <ConsultationHighlightSection isDark={isDark} />
       <AiShowcaseSection isDark={isDark} />
-      <PreviewSection onAddToCart={onAddToCart} isDark={isDark} />
+      <PreviewSection onAddToCart={onAddToCart} isDark={isDark} addingId={addingId} />
       <WhyChooseSection isDark={isDark} />
       <TestimonialsSection isDark={isDark} />
       <StatsSection isDark={isDark} />

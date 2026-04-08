@@ -1,22 +1,40 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import ProductsPage from "./ProductsPage";
+import ProductDetailsPage from "./ProductDetailsPage";
 import RouteInfoPage from "./RouteInfoPage";
 import LandingPage from "./LandingPage";
 import { CartDrawer, Footer, Navbar } from "./components/landing";
+import ToastContainer from "./components/ToastContainer";
 
 function App() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [cartItems, setCartItems] = useState([]);
   const [isDark, setIsDark] = useState(true);
   const [cartOpen, setCartOpen] = useState(false);
+  const [addingId, setAddingId] = useState(null);
+  const [toast, setToast] = useState(null);
+  const addingTimeoutRef = useRef(null);
+  const toastTimeoutRef = useRef(null);
 
   useEffect(() => {
     const savedTheme = window.localStorage.getItem("pc-builder-theme");
     if (savedTheme) setIsDark(savedTheme === "dark");
   }, []);
 
+  useEffect(() => {
+    return () => {
+      if (addingTimeoutRef.current) clearTimeout(addingTimeoutRef.current);
+      if (toastTimeoutRef.current) clearTimeout(toastTimeoutRef.current);
+    };
+  }, []);
+
   const handleAddToCart = (product) => {
+    if (!product) return;
+    if (addingTimeoutRef.current) clearTimeout(addingTimeoutRef.current);
+    if (toastTimeoutRef.current) clearTimeout(toastTimeoutRef.current);
+
+    setAddingId(product.id);
     setCartItems((prev) => {
       const exists = prev.find((item) => item.id === product.id);
       if (exists) {
@@ -27,6 +45,21 @@ function App() {
       return [...prev, { ...product, qty: 1 }];
     });
     setCartOpen(true);
+
+    setToast({
+      id: Date.now(),
+      variant: "success",
+      title: "Added to cart",
+      message: `${product.name} is ready for checkout.`,
+    });
+
+    addingTimeoutRef.current = window.setTimeout(() => {
+      setAddingId(null);
+    }, 900);
+
+    toastTimeoutRef.current = window.setTimeout(() => {
+      setToast(null);
+    }, 3200);
   };
 
   const increaseQty = (id) => {
@@ -71,8 +104,18 @@ function App() {
         onToggleTheme={toggleTheme}
       />
       <Routes>
-        <Route path="/" element={<LandingPage isDark={isDark} onAddToCart={handleAddToCart} />} />
-        <Route path="/products" element={<ProductsPage isDark={isDark} onAddToCart={handleAddToCart} />} />
+        <Route
+          path="/"
+          element={<LandingPage isDark={isDark} onAddToCart={handleAddToCart} addingId={addingId} />}
+        />
+        <Route
+          path="/products"
+          element={<ProductsPage isDark={isDark} onAddToCart={handleAddToCart} addingId={addingId} />}
+        />
+        <Route
+          path="/products/:id"
+          element={<ProductDetailsPage isDark={isDark} onAddToCart={handleAddToCart} addingId={addingId} />}
+        />
         <Route
           path="/build-pc"
           element={
@@ -136,6 +179,7 @@ function App() {
         onClearCart={clearCart}
         isDark={isDark}
       />
+      <ToastContainer toast={toast} onClose={() => setToast(null)} isDark={isDark} />
     </>
   );
 }

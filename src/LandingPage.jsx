@@ -1,6 +1,6 @@
-import { HeroSection, MainSections } from "./components/landing";
+import { HeroSection, MainSections, PromotionsSlider } from "./components/landing";
 
-function LandingPage({ isDark, onAddToCart }) {
+function LandingPage({ isDark, onAddToCart, addingId }) {
   return (
     <div
       className={`min-h-screen scroll-smooth transition-colors ${
@@ -14,7 +14,8 @@ function LandingPage({ isDark, onAddToCart }) {
       </div>
 
       <HeroSection isDark={isDark} />
-      <MainSections onAddToCart={onAddToCart} isDark={isDark} />
+      <PromotionsSlider isDark={isDark} />
+      <MainSections onAddToCart={onAddToCart} isDark={isDark} addingId={addingId} />
     </div>
   );
 }

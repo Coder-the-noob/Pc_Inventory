@@ -3,6 +3,8 @@ export { default as HeroSection } from "./HeroSection";
 export { default as MainSections } from "./MainSections";
 export { default as Footer } from "./Footer";
 export { default as CartDrawer } from "./CartDrawer";
+export { default as ProductCard } from "./ProductCard";
+export { default as PromotionsSlider } from "./PromotionsSlider";
 
 export { default as TrustBadgesSection } from "./TrustBadgesSection";
 export { default as FeaturesSection } from "./FeaturesSection";
