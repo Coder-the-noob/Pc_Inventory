@@ -18,7 +18,7 @@ function HowItWorksSection({ isDark = true }) {
       >
         {steps.map((step, idx) => (
           <motion.div key={step} variants={fadeUp} className={`relative p-5 ${isDark ? glassCard : lightCard}`}>
-            <div className="mb-3 inline-flex h-7 w-7 items-center justify-center rounded-full bg-gradient-to-r from-cyan-400 to-violet-500 text-xs font-bold text-slate-950">
+            <div className="mb-3 inline-flex h-7 w-7 items-center justify-center rounded-full bg-gradient-to-r from-primary-400 to-primary-500 text-xs font-bold text-slate-950">
               {idx + 1}
             </div>
             <p className={`text-sm ${isDark ? "text-slate-200" : "text-slate-700"}`}>{step}</p>

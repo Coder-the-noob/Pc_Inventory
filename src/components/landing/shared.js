@@ -14,10 +14,10 @@ export const stagger = {
 };
 
 export const glassCard =
-  "rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl shadow-[0_0_40px_rgba(34,211,238,0.08)]";
+  "rounded-2xl border border-white/5 bg-secondary backdrop-blur-xl shadow-[0_0_40px_rgba(255,96,68,0.03)]";
 
 export const lightCard =
-  "rounded-2xl border border-slate-200 bg-white/90 backdrop-blur-xl shadow-[0_10px_30px_rgba(15,23,42,0.08)]";
+  "rounded-2xl border border-slate-200 bg-white/90 backdrop-blur-xl shadow-[0_10px_30px_rgba(255,96,68,0.03)]";
 
 export const uiSize = {
   iconButton: "flex h-10 w-10 items-center justify-center rounded-xl",
@@ -30,10 +30,10 @@ export const uiSize = {
 export const uiTone = {
   outline: (isDark) =>
     isDark
-      ? "border-white/20 text-slate-200 hover:border-cyan-400/60 hover:text-cyan-300"
-      : "border-slate-300 text-slate-700 hover:border-cyan-500/60 hover:text-cyan-700",
+      ? "border-white/10 text-slate-300 hover:border-white/20 hover:text-white bg-white/5 hover:bg-white/10"
+      : "border-slate-300 text-slate-700 hover:border-slate-400 hover:text-slate-900 hover:bg-slate-50",
   primary: (isDark) =>
     isDark
-      ? "bg-gradient-to-r from-cyan-400 to-violet-500 text-slate-950 hover:shadow-[0_0_24px_rgba(34,211,238,0.45)]"
-      : "bg-gradient-to-r from-cyan-500 to-indigo-500 text-white hover:shadow-[0_0_18px_rgba(59,130,246,0.25)]",
+      ? "bg-primary text-secondary hover:shadow-[0_0_24px_rgba(255,96,68,0.2)]"
+      : "bg-primary text-white hover:shadow-[0_0_18px_rgba(255,96,68,0.2)]",
 };

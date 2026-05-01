@@ -11,7 +11,7 @@ function WhyChooseSection({ isDark = true }) {
       <motion.div variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true }} className="mt-8 grid gap-4 md:grid-cols-2">
         {reasons.map((item) => (
           <motion.div key={item.title} variants={fadeUp} className={`p-6 ${isDark ? glassCard : lightCard}`}>
-            <item.icon className="h-6 w-6 text-cyan-300" />
+            <item.icon className="h-6 w-6 text-primary-300" />
             <h3 className={`mt-4 text-lg font-semibold ${isDark ? "text-slate-100" : "text-slate-900"}`}>{item.title}</h3>
             <p className={`mt-2 text-sm ${isDark ? "text-slate-300" : "text-slate-600"}`}>{item.text}</p>
           </motion.div>

@@ -29,7 +29,7 @@ function FaqSection({ isDark = true }) {
             className={`p-5 ${isDark ? glassCard : lightCard}`}
           >
             <div className="mb-3 flex items-start gap-2">
-              <HelpCircle className="mt-0.5 h-4 w-4 text-cyan-400" />
+              <HelpCircle className="mt-0.5 h-4 w-4 text-primary-400" />
               <h3 className={`text-[1.02rem] font-semibold ${isDark ? "text-slate-100" : "text-slate-900"}`}>{item.q}</h3>
             </div>
             <p className={`text-sm leading-relaxed ${isDark ? "text-slate-300" : "text-slate-600"}`}>{item.a}</p>

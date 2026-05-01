@@ -14,7 +14,7 @@ function TrustBadgesSection({ isDark = true }) {
       >
         {trustBadges.map((badge) => (
           <motion.div key={badge.label} variants={fadeUp} className={`flex items-center gap-2 p-3 ${isDark ? glassCard : lightCard}`}>
-            <badge.icon className="h-4 w-4 text-cyan-300" />
+            <badge.icon className="h-4 w-4 text-primary-300" />
             <p className={`text-xs ${isDark ? "text-slate-300" : "text-slate-700"}`}>{badge.label}</p>
           </motion.div>
         ))}

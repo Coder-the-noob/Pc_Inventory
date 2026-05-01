@@ -16,8 +16,8 @@ function TestimonialsSection({ isDark = true }) {
               <div
                 className={`flex h-10 w-10 items-center justify-center rounded-full font-semibold ${
                   isDark
-                    ? "bg-gradient-to-r from-cyan-400 to-violet-500 text-slate-950"
-                    : "bg-gradient-to-r from-cyan-500 to-indigo-500 text-white"
+                    ? "bg-gradient-to-r from-primary-400 to-primary-500 text-slate-950"
+                    : "bg-gradient-to-r from-primary-500 to-primary-500 text-white"
                 }`}
               >
                 {item.name[0]}
@@ -28,8 +28,8 @@ function TestimonialsSection({ isDark = true }) {
               </div>
             </div>
             <p className={`text-sm ${isDark ? "text-slate-300" : "text-slate-600"}`}>{item.text}</p>
-            <div className="mt-4 flex gap-1 text-amber-300">
-              {[...Array(5)].map((_, i) => <Star key={i} className="h-4 w-4 fill-amber-300" />)}
+            <div className="mt-4 flex gap-1 text-primary-300">
+              {[...Array(5)].map((_, i) => <Star key={i} className="h-4 w-4 fill-primary-300" />)}
             </div>
           </motion.div>
         ))}

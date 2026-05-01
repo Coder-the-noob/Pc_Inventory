@@ -6,6 +6,7 @@ import RouteInfoPage from "./RouteInfoPage";
 import LandingPage from "./LandingPage";
 import { CartDrawer, Footer, Navbar } from "./components/landing";
 import ToastContainer from "./components/ToastContainer";
+import Login from "./components/login/Login";
 
 function App() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -14,6 +15,7 @@ function App() {
   const [cartOpen, setCartOpen] = useState(false);
   const [addingId, setAddingId] = useState(null);
   const [toast, setToast] = useState(null);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const addingTimeoutRef = useRef(null);
   const toastTimeoutRef = useRef(null);
 
@@ -102,6 +104,8 @@ function App() {
         onCartClick={() => setCartOpen(true)}
         isDark={isDark}
         onToggleTheme={toggleTheme}
+        isLoggedIn={isLoggedIn}
+        setIsLoggedIn={setIsLoggedIn}
       />
       <Routes>
         <Route
@@ -165,6 +169,10 @@ function App() {
               isDark={isDark}
             />
           }
+        />
+        <Route
+          path="/login"
+          element={<Login isDark={isDark} setIsLoggedIn={setIsLoggedIn} />}
         />
       </Routes>
       <Footer isDark={isDark} />

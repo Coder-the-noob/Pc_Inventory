@@ -2,9 +2,9 @@ import { AnimatePresence, motion } from "framer-motion";
 import { CheckCircle2, ShoppingCart, XCircle } from "lucide-react";
 
 function ToastIcon({ variant }) {
-  if (variant === "error") return <XCircle className="h-5 w-5 text-rose-300" />;
-  if (variant === "success") return <CheckCircle2 className="h-5 w-5 text-emerald-300" />;
-  return <ShoppingCart className="h-5 w-5 text-cyan-300" />;
+  if (variant === "error") return <XCircle className="h-5 w-5 text-primary-300" />;
+  if (variant === "success") return <CheckCircle2 className="h-5 w-5 text-primary-300" />;
+  return <ShoppingCart className="h-5 w-5 text-primary-300" />;
 }
 
 function ToastContainer({ toast, onClose, isDark }) {
@@ -25,7 +25,7 @@ function ToastContainer({ toast, onClose, isDark }) {
             className={[
               "flex items-start gap-3 rounded-2xl border p-4 shadow-xl backdrop-blur-xl",
               isDark
-                ? "border-white/10 bg-slate-900/80"
+                ? "border-white/10 bg-secondary/80"
                 : "border-slate-200 bg-white/90",
             ].join(" ")}
           >

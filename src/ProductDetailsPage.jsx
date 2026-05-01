@@ -9,10 +9,10 @@ function ProductDetailsPage({ isDark, onAddToCart, addingId }) {
 
   if (!product) {
     return (
-      <div className={`min-h-[70vh] ${isDark ? "bg-slate-950 text-slate-100" : "bg-slate-100 text-slate-900"}`}>
+      <div className={`min-h-[70vh] ${isDark ? "bg-secondary text-slate-100" : "bg-slate-100 text-slate-900"}`}>
         <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
           <p className={isDark ? "text-slate-300" : "text-slate-600"}>Product not found.</p>
-          <Link to="/products" className="mt-4 inline-flex h-10 items-center rounded-xl bg-gradient-to-r from-cyan-500 to-indigo-500 px-5 text-sm font-semibold text-white">
+          <Link to="/products" className="mt-4 inline-flex h-10 items-center rounded-xl bg-gradient-to-r from-primary-500 to-primary-500 px-5 text-sm font-semibold text-white">
             Back to Products
           </Link>
         </div>
@@ -21,9 +21,9 @@ function ProductDetailsPage({ isDark, onAddToCart, addingId }) {
   }
 
   return (
-    <div className={`min-h-screen ${isDark ? "bg-slate-950 text-slate-100" : "bg-slate-100 text-slate-900"}`}>
+    <div className={`min-h-screen ${isDark ? "bg-secondary text-slate-100" : "bg-slate-100 text-slate-900"}`}>
       <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
-        <Link to="/products" className={`inline-flex items-center text-sm ${isDark ? "text-cyan-300" : "text-cyan-700"}`}>
+        <Link to="/products" className={`inline-flex items-center text-sm ${isDark ? "text-primary-300" : "text-primary-700"}`}>
           <ArrowLeft className="mr-2 h-4 w-4" /> Back to Products
         </Link>
 
@@ -34,10 +34,10 @@ function ProductDetailsPage({ isDark, onAddToCart, addingId }) {
 
           <div>
             <div className="flex items-center gap-3">
-              <span className={`rounded-full px-3 py-1 text-xs font-medium ${isDark ? "bg-violet-500/15 text-violet-200" : "bg-indigo-100 text-indigo-700"}`}>
+              <span className={`rounded-full px-3 py-1 text-xs font-medium ${isDark ? "bg-primary-500/15 text-primary-200" : "bg-primary-100 text-primary-700"}`}>
                 {product.category}
               </span>
-              <span className={`inline-flex items-center gap-1 rounded-full px-3 py-1 text-xs font-medium ${product.stock === "Low Stock" ? (isDark ? "bg-amber-500/15 text-amber-200" : "bg-amber-100 text-amber-700") : (isDark ? "bg-emerald-500/15 text-emerald-200" : "bg-emerald-100 text-emerald-700")}`}>
+              <span className={`inline-flex items-center gap-1 rounded-full px-3 py-1 text-xs font-medium ${product.stock === "Low Stock" ? (isDark ? "bg-primary-500/15 text-primary-200" : "bg-primary-100 text-primary-700") : (isDark ? "bg-primary-500/15 text-primary-200" : "bg-primary-100 text-primary-700")}`}>
                 <CheckCircle2 className="h-3.5 w-3.5" /> {product.stock}
               </span>
             </div>
@@ -48,12 +48,12 @@ function ProductDetailsPage({ isDark, onAddToCart, addingId }) {
             </p>
 
             <div className="mt-6 flex items-end gap-3">
-              <div className={`text-3xl font-bold ${isDark ? "text-cyan-300" : "text-cyan-700"}`}>${product.price}</div>
+              <div className={`text-3xl font-bold ${isDark ? "text-primary-300" : "text-primary-700"}`}>${product.price}</div>
               {product.oldPrice ? (
                 <div className={`pb-1 text-sm line-through ${isDark ? "text-slate-400" : "text-slate-500"}`}>${product.oldPrice}</div>
               ) : null}
               {product.discountPct ? (
-                <div className={`pb-1 text-sm font-semibold ${isDark ? "text-rose-300" : "text-rose-600"}`}>-{product.discountPct}%</div>
+                <div className={`pb-1 text-sm font-semibold ${isDark ? "text-primary-300" : "text-primary-600"}`}>-{product.discountPct}%</div>
               ) : null}
             </div>
 
@@ -61,7 +61,7 @@ function ProductDetailsPage({ isDark, onAddToCart, addingId }) {
               <button
                 onClick={() => onAddToCart?.(product)}
                 disabled={addingId === product.id}
-                className={`inline-flex h-11 items-center justify-center rounded-xl bg-gradient-to-r from-cyan-500 to-indigo-500 px-6 text-sm font-semibold text-white ${
+                className={`inline-flex h-11 items-center justify-center rounded-xl bg-gradient-to-r from-primary-500 to-primary-500 px-6 text-sm font-semibold text-white ${
                   addingId === product.id ? "opacity-90" : ""
                 }`}
               >

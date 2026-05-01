@@ -8,7 +8,7 @@ function StatsSection({ isDark = true }) {
       <motion.div variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true }} className="grid gap-4 md:grid-cols-4">
         {stats.map((item) => (
           <motion.div key={item.label} variants={fadeUp} className={`p-6 text-center ${isDark ? glassCard : lightCard}`}>
-            <p className="text-3xl font-bold text-cyan-300">{item.value}</p>
+            <p className="text-3xl font-bold text-primary-300">{item.value}</p>
             <p className={`mt-2 text-sm ${isDark ? "text-slate-300" : "text-slate-600"}`}>{item.label}</p>
           </motion.div>
         ))}

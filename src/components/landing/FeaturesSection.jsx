@@ -20,8 +20,8 @@ function FeaturesSection({ isDark = true }) {
       >
         {features.map((feature) => (
           <motion.div key={feature.title} variants={fadeUp} whileHover={{ y: -6, scale: 1.01 }} className={`p-6 transition ${isDark ? glassCard : lightCard}`}>
-            <div className={`mb-4 inline-flex rounded-xl p-3 ${isDark ? "bg-cyan-500/15" : "bg-cyan-100"}`}>
-              <feature.icon className="h-5 w-5 text-cyan-300" />
+            <div className={`mb-4 inline-flex rounded-xl p-3 ${isDark ? "bg-primary-500/15" : "bg-primary-100"}`}>
+              <feature.icon className="h-5 w-5 text-primary-300" />
             </div>
             <h3 className={`text-[1.05rem] font-semibold ${isDark ? "text-slate-100" : "text-slate-900"}`}>{feature.title}</h3>
             <p className={`mt-3 text-sm leading-relaxed ${isDark ? "text-slate-300" : "text-slate-600"}`}>{feature.description}</p>

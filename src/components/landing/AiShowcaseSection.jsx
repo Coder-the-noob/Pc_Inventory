@@ -16,14 +16,14 @@ function AiShowcaseSection({ isDark = true }) {
         {[["Budget", "$800"], ["Usage", "Gaming"], ["Suggested Build Score", "89/100"], ["Compatibility", "Passed"]].map(([title, value]) => (
           <motion.div key={title} variants={fadeUp} className={`p-5 ${isDark ? glassCard : lightCard}`}>
             <p className={`text-xs uppercase tracking-wide ${isDark ? "text-slate-400" : "text-slate-500"}`}>{title}</p>
-            <p className="mt-2 text-xl font-semibold text-cyan-300">{value}</p>
+            <p className="mt-2 text-xl font-semibold text-primary-300">{value}</p>
           </motion.div>
         ))}
       </motion.div>
       <div className="mt-8 grid gap-3 md:grid-cols-4">
         {aiProfiles.map((Icon, i) => (
-          <div key={i} className={`rounded-xl border p-4 text-center text-sm ${isDark ? "border-white/10 bg-slate-900/60 text-slate-300" : "border-slate-200 bg-white text-slate-700"}`}>
-            <Icon className="mx-auto mb-2 h-5 w-5 text-violet-300" />
+          <div key={i} className={`rounded-xl border p-4 text-center text-sm ${isDark ? "border-white/10 bg-secondary/60 text-slate-300" : "border-slate-200 bg-white text-slate-700"}`}>
+            <Icon className="mx-auto mb-2 h-5 w-5 text-primary-300" />
             {["Gaming", "Office", "Editing", "Streaming"][i]} Build Template
           </div>
         ))}

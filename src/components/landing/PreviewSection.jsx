@@ -38,11 +38,11 @@ function PreviewSection({ onAddToCart, isDark = true, addingId }) {
             className={`${uiSize.chip} transition ${
               selectedCategory === category
                 ? isDark
-                  ? "border-cyan-400/60 bg-cyan-500/15 text-cyan-200"
-                  : "border-cyan-300 bg-cyan-100 text-cyan-700"
+                  ? "border-primary-400/60 bg-primary-500/15 text-primary-200"
+                  : "border-primary-300 bg-primary-100 text-primary-700"
                 : isDark
-                  ? "border-white/20 text-slate-300 hover:border-cyan-400/40"
-                  : "border-slate-300 text-slate-700 hover:border-cyan-500/40"
+                  ? "border-white/20 text-slate-300 hover:border-primary-400/40"
+                  : "border-slate-300 text-slate-700 hover:border-primary-500/40"
             }`}
           >
             {category}
@@ -66,8 +66,8 @@ function PreviewSection({ onAddToCart, isDark = true, addingId }) {
           to="/products"
           className={`h-10 rounded-xl border px-6 text-sm font-medium transition inline-flex items-center ${
             isDark
-              ? "border-cyan-300/40 bg-cyan-500/10 text-cyan-200 hover:bg-cyan-500/20"
-              : "border-cyan-300 bg-cyan-100 text-cyan-700 hover:bg-cyan-200"
+              ? "border-primary-300/40 bg-primary-500/10 text-primary-200 hover:bg-primary-500/20"
+              : "border-primary-300 bg-primary-100 text-primary-700 hover:bg-primary-200"
           }`}
         >
           Show All Products
